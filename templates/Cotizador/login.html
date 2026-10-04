@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login CINTAC</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <meta name="description" content="Inicio de sesión del cotizador CINTAC.">
+    <title>Iniciar sesión | CINTAC</title>
+    <link rel="stylesheet" href="{% static 'CSS/cintac.css' %}">
 </head>
-<body>
-    <main>
-        <h1>Debes iniciar sesion para continuar</h1>
-        
+<body class="login-page">
+    <main class="login-main">
+        <section class="login-card" aria-labelledby="login-title">
+            <a class="brand login-brand" href="/" aria-label="CINTAC inicio">
+                <img src="{% static 'images/MainCintac/logo.jpg' %}" alt="CINTAC">
+            </a>
+            <p class="eyebrow orange">COTIZADOR CINTAC</p>
+            <h1 id="login-title">Iniciar sesión</h1>
+            <p class="login-intro">Ingresa tus datos para continuar.</p>
+
+            <form class="login-form" method="post" action="">
+                {% csrf_token %}
+                <div class="login-field">
+                    <label for="username">Usuario</label>
+                    <input id="username" name="username" type="text" autocomplete="username" required>
+                </div>
+                <div class="login-field">
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="dark-button login-submit" type="submit">Ingresar <span>↗</span></button>
+            </form>
+        </section>
     </main>
 </body>
 </html>
