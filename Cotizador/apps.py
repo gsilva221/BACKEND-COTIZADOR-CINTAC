@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class MaincintacConfig(AppConfig):
-    name = 'MainCintac'
+class CotizadorConfig(AppConfig):
+    name = 'Cotizador'

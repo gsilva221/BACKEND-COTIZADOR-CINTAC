@@ -21,4 +21,6 @@ from MainCintac.views import principal
 urlpatterns = [
     path("", principal),
     path('admin/', admin.site.urls),
+    path("Cotizador/", include("Cotizador.urls")),
 ]
+
