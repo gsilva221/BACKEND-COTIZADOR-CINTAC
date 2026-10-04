@@ -1,10 +1,11 @@
+<div align="center">
 # 🚢 Cotizador Logístico Interno CINTAC
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
-
+</div>
 
 ## 📋 Descripción
 Sistema desarrollado para uso interno exclusivo de la empresa CINTAC. Esta herramienta permite simular cotizaciones de importación marítima, calculando costos de flete, tiempos de tránsito y la asignación automática de contenedores (20' y 40' HQ) según el peso de la carga. 
