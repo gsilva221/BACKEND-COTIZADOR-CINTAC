@@ -18,29 +18,43 @@ El sistema utiliza como base de datos maestra una planilla de Excel administrada
 
 ## Instalación y Ejecución (Entorno Local)
 
-1. Clonar el repositorio:
+**1. Clonar el repositorio:**
+```bash
 git clone <url-del-repositorio>
 cd cotizador-cintac
+```
 
-2. Crear y activar un entorno virtual:
+**2. Crear y activar un entorno virtual:**
+```bash
 python -m venv venv
-# En Windows:
+```
+
+*En Windows:*
+```bash
 venv\Scripts\activate
-# En macOS/Linux:
+```
+
+*En macOS/Linux:*
+```bash
 source venv/bin/activate
+```
 
-3. Instalar dependencias:
+**3. Instalar dependencias:**
+```bash
 pip install -r requirements.txt
+```
 
-4. Configurar el archivo maestro:
-Asegúrate de que el archivo Excel de tarifas (tarifas_cintac.xlsx) esté ubicado en la carpeta raíz o en la ruta definida en las configuraciones del proyecto.
+**4. Configurar el archivo maestro:**
+Asegúrate de que el archivo Excel de tarifas (`tarifas_cintac.xlsx`) esté ubicado en la carpeta raíz o en la ruta definida en las configuraciones del proyecto.
 
-5. Ejecutar las migraciones y el servidor de desarrollo:
+**5. Ejecutar las migraciones y el servidor de desarrollo:**
+```bash
 python manage.py migrate
 python manage.py runserver
+```
 
-6. Acceder a la aplicación:
-Abre tu navegador web e ingresa a http://localhost:8000.
+**6. Acceder a la aplicación:**
+Abre tu navegador web e ingresa a `http://localhost:8000`.
 
 ## Consideraciones Futuras
 Este prototipo está diseñado bajo una arquitectura evolutiva. En su fase de producción, el frontend migrará a React.js, el backend a Django REST Framework alojado en Microsoft Azure, y la lectura del Excel se realizará mediante Microsoft Graph API conectado a OneDrive, manteniendo siempre su carácter de herramienta corporativa interna.
