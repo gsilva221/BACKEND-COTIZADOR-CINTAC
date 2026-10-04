@@ -27,8 +27,8 @@ El sistema utiliza como base de datos maestra una planilla de Excel administrada
 
 **1. Clonar el repositorio:**
 ```bash
-git clone <url-del-repositorio>
-cd cotizador-cintac
+git clone https://github.com/gsilva221/BACKEND-COTIZADOR-CINTAC.git
+cd BACKEND-COTIZADOR-CINTAC
 ```
 
 **2. Crear y activar un entorno virtual:**
