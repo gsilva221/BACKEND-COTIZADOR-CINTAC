@@ -15,7 +15,7 @@
 ## 📋 Descripción
 Sistema desarrollado para uso interno exclusivo de la empresa CINTAC. Esta herramienta permite simular cotizaciones de importación marítima, calculando costos de flete, tiempos de tránsito y la asignación automática de contenedores (20' y 40' HQ) según el peso de la carga. 
 
-El sistema utiliza como base de datos maestra una planilla de Excel administrada directamente por los analistas internos de la empresa.
+El sistema utiliza como base de datos el sistema proporcionado por Django.
 
 ## ⭐ Características Principales
 - **Cálculo de Contenedores:** Asignación automática considerando topes viales de 20 y 25 toneladas.
