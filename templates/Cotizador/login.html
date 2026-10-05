@@ -18,7 +18,11 @@
             <h1 id="login-title">Iniciar sesión</h1>
             <p class="login-intro">Ingresa tus datos para continuar.</p>
 
-            <form class="login-form" method="post" action="">
+            {% if error %}
+                <p role="alert" style="color: red;">{{ error }}</p>
+            {% endif %}
+
+            <form class="login-form" method="post" action="{% url 'login' %}">
                 {% csrf_token %}
                 <div class="login-field">
                     <label for="username">Usuario</label>
