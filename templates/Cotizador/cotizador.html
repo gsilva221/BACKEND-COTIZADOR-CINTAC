@@ -1,12 +1,133 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador</title>
+    <meta name="description" content="Cotizador de transporte marítimo CINTAC.">
+    <title>Cotizador | CINTAC</title>
+    <link rel="stylesheet" href="{% static 'CSS/cintac.css' %}">
 </head>
-<body>
-    <h1>Cotizador</h1>
+<body class="quote-page">
+    <header class="quote-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="/" aria-label="CINTAC inicio">
+                <img src="{% static 'images/MainCintac/logo.jpg' %}" alt="CINTAC">
+            </a>
+            <div class="quote-actions">
+                <a class="dark-button quote-history" href="{% url 'historial' %}">
+                    Historial
+                </a>
+                <a class="dark-button quote-logout" href="{% url 'login' %}">
+                    Cerrar sesión <span>↗</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="quote-main container">
+        <section class="quote-intro">
+            <p class="eyebrow orange">COTIZADOR CINTAC</p>
+            <h1>Calcula tu transporte</h1>
+            <p>Ingresa los datos de la carga para estimar la cantidad de contenedores y el costo de envío.</p>
+        </section>
+
+        <div class="quote-layout">
+            <section class="quote-card" aria-labelledby="quote-form-title">
+                <h2 id="quote-form-title">Datos de la carga</h2>
+                {% if error %}
+                    <p class="quote-alert" role="alert">{{ error }}</p>
+                {% endif %}
+                <form class="quote-form" method="post">
+                    {% csrf_token %}
+                    <div class="quote-fields">
+                        <div class="quote-field">
+                            <label for="nombre_cliente">Nombre del cliente</label>
+                            <input id="nombre_cliente" name="nombre_cliente" type="text" maxlength="100" value="{{ form_data.nombre_cliente|default:'' }}" required>
+                        </div>
+                        <div class="quote-field">
+                            <label for="empresa">Empresa</label>
+                            <input id="empresa" name="empresa" type="text" maxlength="100" value="{{ form_data.empresa|default:'' }}" required>
+                        </div>
+                        <div class="quote-field">
+                            <label for="correo_cliente">Correo del cliente</label>
+                            <input id="correo_cliente" name="correo_cliente" type="email" maxlength="100" value="{{ form_data.correo_cliente|default:'' }}" required>
+                        </div>
+                        <div class="quote-field">
+                            <label for="puerto_origen">Puerto de origen</label>
+                            <select id="puerto_origen" name="puerto_origen" required>
+                                <option value="">Selecciona un puerto</option>
+                                {% for puerto in puertos_origen %}
+                                    <option value="{{ puerto }}" {% if form_data.puerto_origen == puerto %}selected{% endif %}>
+                                        {{ puerto }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="quote-field">
+                            <label for="puerto_destino">Puerto de destino</label>
+                            <select id="puerto_destino" name="puerto_destino" required>
+                                <option value="">Selecciona un puerto</option>
+                                {% for puerto in puertos_destino %}
+                                    <option value="{{ puerto }}" {% if form_data.puerto_destino == puerto %}selected{% endif %}>
+                                        {{ puerto }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="quote-field">
+                            <label for="peso_carga">Peso de la carga (kg)</label>
+                            <input id="peso_carga" name="peso_carga" type="number" min="1" step="1" value="{{ form_data.peso_carga|default:'' }}" required>
+                        </div>
+                        <div class="quote-field">
+                            <label for="tipo_contenedor">Tipo de contenedor</label>
+                            <select id="tipo_contenedor" name="tipo_contenedor" required>
+                                <option value="">Selecciona un contenedor</option>
+                                {% for tipo in tipos_contenedor %}
+                                    <option value="{{ tipo }}" {% if form_data.tipo_contenedor == tipo %}selected{% endif %}>{{ tipo }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="quote-field">
+                        <label for="descripcion_carga">Descripción de la carga</label>
+                        <textarea id="descripcion_carga" name="descripcion_carga" rows="4" placeholder="Describe brevemente la carga" required>{{ form_data.descripcion_carga|default:'' }}</textarea>
+                    </div>
+                    <button class="dark-button quote-submit" type="submit">Calcular cotización <span>↗</span></button>
+                </form>
+            </section>
+
+            {% if resultado %}
+                <section class="quote-result" aria-labelledby="quote-result-title">
+                    <p class="eyebrow orange">RESULTADO ESTIMADO</p>
+                    <h2 id="quote-result-title">Tu cotización</h2>
+                    <p class="quote-route">{{ resultado.ruta.puerto_origen }} → {{ resultado.ruta.puerto_destino }}</p>
+                    <dl class="quote-summary">
+                        <div><dt>Cliente</dt><dd>{{ resultado.nombre_cliente }}</dd></div>
+                        <div><dt>Empresa</dt><dd>{{ resultado.empresa }}</dd></div>
+                        <div><dt>Correo</dt><dd>{{ resultado.correo_cliente }}</dd></div>
+                        <div><dt>Carga</dt><dd>{{ resultado.descripcion_carga|default:"Sin descripción" }}</dd></div>
+                        <div><dt>Peso ingresado</dt><dd>{{ resultado.peso_carga }} kg</dd></div>
+                        <div><dt>Contenedor</dt><dd>{{ resultado.tipo_contenedor }}</dd></div>
+                        <div><dt>Contenedores necesarios</dt><dd class="quote-highlight">{{ resultado.cantidad_contenedores }}</dd></div>
+                        <div><dt>Costo fijo</dt><dd>{{ resultado.moneda }} {{ resultado.costo_fijo|floatformat:2 }}</dd></div>
+                        <div><dt>IVA (19%)</dt><dd>{{ resultado.moneda }} {{ resultado.monto_iva|floatformat:2 }}</dd></div>
+                    </dl>
+                    <div class="quote-total">
+                        <span>Costo total estimado</span>
+                        <strong>{{ resultado.moneda }} {{ resultado.monto_total|floatformat:2 }}</strong>
+                    </div>
+                    <a class="dark-button quote-submit" href="{% url 'informe' %}">Ver informe <span>↗</span></a>
+                    <p class="quote-note">El valor final puede variar según las condiciones comerciales, climaticas y de transporte.</p>
+                </section>
+            {% else %}
+                <aside class="quote-help">
+                    <span class="quote-help-mark">+</span>
+                    <h2>Una estimación clara para tu carga</h2>
+                    <p>El cálculo considera la capacidad máxima respetando la normativa y aplica automáticamente el IVA del 19%.</p>
+                </aside>
+            {% endif %}
+        </div>
+    </main>
 </body>
 </html>

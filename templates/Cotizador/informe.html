@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de informe de cotización CINTAC.">
+    <title>Informe | CINTAC</title>
+    <link rel="stylesheet" href="{% static 'CSS/cintac.css' %}">
+</head>
+<body class="quote-page">
+    <header class="quote-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="/" aria-label="CINTAC inicio">
+                <img src="{% static 'images/MainCintac/logo.jpg' %}" alt="CINTAC">
+            </a>
+            <a class="dark-button quote-logout" href="{% url 'login' %}">Cerrar sesión <span>↗</span></a>
+        </div>
+    </header>
+
+    <main class="quote-main container">
+        <section class="quote-intro">
+            <p class="eyebrow orange">INFORME CINTAC</p>
+            <h1>Genera tu informe</h1>
+            <p>Confirma la generación del informe de tu cotización.</p>
+        </section>
+
+        <div class="quote-layout">
+            <section class="quote-card" aria-labelledby="report-form-title">
+                {% if registro %}
+                    <p class="eyebrow orange">COTIZACIÓN REGISTRADA</p>
+                    <h2 id="report-form-title">Informe generado</h2>
+                    <dl class="quote-summary">
+                        <div><dt>ID de cotización</dt><dd class="quote-highlight">{{ registro.id }}</dd></div>
+                        <div><dt>Fecha</dt><dd>{{ registro.fecha|date:"d/m/Y H:i" }}</dd></div>
+                    </dl>
+                    <p class="quote-note">El registro fue guardado correctamente en el sistema.</p>
+                {% else %}
+                    <h2 id="report-form-title">Cotización lista</h2>
+                    {% if error %}
+                        <p class="quote-alert" role="alert">{{ error }}</p>
+                    {% endif %}
+                    <form class="quote-form" method="post">
+                        {% csrf_token %}
+                        <p class="quote-note">La cotización está lista para generar su informe.</p>
+                        <button class="dark-button quote-submit" type="submit">Generar informe <span>↗</span></button>
+                    </form>
+                {% endif %}
+            </section>
+
+            {% if registro %}
+                <aside class="quote-help">
+                    <span class="quote-help-mark">+</span>
+                    <h2>Informe generado</h2>
+                    <p>La cotización quedó registrada correctamente.</p>
+                </aside>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

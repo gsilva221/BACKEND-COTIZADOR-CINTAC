@@ -1,0 +1,618 @@
+[
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  1,
+        "fields":  {
+                       "id_ruta":  1,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  2,
+        "fields":  {
+                       "id_ruta":  1,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  3,
+        "fields":  {
+                       "id_ruta":  2,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  4,
+        "fields":  {
+                       "id_ruta":  2,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  5,
+        "fields":  {
+                       "id_ruta":  3,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  6,
+        "fields":  {
+                       "id_ruta":  3,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  7,
+        "fields":  {
+                       "id_ruta":  4,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  8,
+        "fields":  {
+                       "id_ruta":  4,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  9,
+        "fields":  {
+                       "id_ruta":  5,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  10,
+        "fields":  {
+                       "id_ruta":  5,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  11,
+        "fields":  {
+                       "id_ruta":  6,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  12,
+        "fields":  {
+                       "id_ruta":  6,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  13,
+        "fields":  {
+                       "id_ruta":  7,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  14,
+        "fields":  {
+                       "id_ruta":  7,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  15,
+        "fields":  {
+                       "id_ruta":  8,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  16,
+        "fields":  {
+                       "id_ruta":  8,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  17,
+        "fields":  {
+                       "id_ruta":  9,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  18,
+        "fields":  {
+                       "id_ruta":  9,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  19,
+        "fields":  {
+                       "id_ruta":  10,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  20,
+        "fields":  {
+                       "id_ruta":  10,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  21,
+        "fields":  {
+                       "id_ruta":  11,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  22,
+        "fields":  {
+                       "id_ruta":  11,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  23,
+        "fields":  {
+                       "id_ruta":  12,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  3200,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  24,
+        "fields":  {
+                       "id_ruta":  12,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  25,
+        "fields":  {
+                       "id_ruta":  13,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  2500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  26,
+        "fields":  {
+                       "id_ruta":  13,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  4500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  27,
+        "fields":  {
+                       "id_ruta":  14,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  1000,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  28,
+        "fields":  {
+                       "id_ruta":  14,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  1200,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  29,
+        "fields":  {
+                       "id_ruta":  15,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  30,
+        "fields":  {
+                       "id_ruta":  15,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  31,
+        "fields":  {
+                       "id_ruta":  16,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  32,
+        "fields":  {
+                       "id_ruta":  16,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  33,
+        "fields":  {
+                       "id_ruta":  17,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  34,
+        "fields":  {
+                       "id_ruta":  17,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  35,
+        "fields":  {
+                       "id_ruta":  18,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  36,
+        "fields":  {
+                       "id_ruta":  18,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  37,
+        "fields":  {
+                       "id_ruta":  19,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  38,
+        "fields":  {
+                       "id_ruta":  19,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  39,
+        "fields":  {
+                       "id_ruta":  20,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  4300,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  40,
+        "fields":  {
+                       "id_ruta":  20,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  41,
+        "fields":  {
+                       "id_ruta":  21,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  42,
+        "fields":  {
+                       "id_ruta":  21,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  43,
+        "fields":  {
+                       "id_ruta":  22,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  44,
+        "fields":  {
+                       "id_ruta":  22,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  45,
+        "fields":  {
+                       "id_ruta":  23,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  46,
+        "fields":  {
+                       "id_ruta":  23,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  47,
+        "fields":  {
+                       "id_ruta":  24,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  48,
+        "fields":  {
+                       "id_ruta":  24,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  49,
+        "fields":  {
+                       "id_ruta":  25,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  50,
+        "fields":  {
+                       "id_ruta":  25,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  6700,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  51,
+        "fields":  {
+                       "id_ruta":  26,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  3200,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  52,
+        "fields":  {
+                       "id_ruta":  26,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  53,
+        "fields":  {
+                       "id_ruta":  27,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  3200,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  54,
+        "fields":  {
+                       "id_ruta":  27,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  5500,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  55,
+        "fields":  {
+                       "id_ruta":  28,
+                       "tipo_contenedor":  "20 HQ",
+                       "peso_max":  20000,
+                       "costo_fijo":  1000,
+                       "moneda_original":  "USD"
+                   }
+    },
+    {
+        "model":  "Cotizador.tarifa_contenedor",
+        "pk":  56,
+        "fields":  {
+                       "id_ruta":  28,
+                       "tipo_contenedor":  "40 HQ",
+                       "peso_max":  25000,
+                       "costo_fijo":  1200,
+                       "moneda_original":  "USD"
+                   }
+    }
+]

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historial de cotizaciones CINTAC.">
+    <title>Historial | CINTAC</title>
+    <link rel="stylesheet" href="{% static 'CSS/cintac.css' %}">
+</head>
+<body class="quote-page">
+    <header class="quote-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="/" aria-label="CINTAC inicio">
+                <img src="{% static 'images/MainCintac/logo.jpg' %}" alt="CINTAC">
+            </a>
+            <div class="quote-actions">
+                <a class="dark-button quote-history" href="{% url 'cotizador' %}">
+                    Nuevo cálculo
+                </a>
+                <a class="dark-button quote-logout" href="{% url 'login' %}">
+                    Cerrar sesión <span>↗</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="quote-main container">
+        <section class="quote-intro">
+            <p class="eyebrow orange">COTIZADOR CINTAC</p>
+            <h1>Historial de cotizaciones</h1>
+            <p>Consulta las cotizaciones generadas anteriormente desde tu cuenta.</p>
+        </section>
+
+        <section class="history-card" aria-labelledby="history-title">
+            <div class="history-heading">
+                <div>
+                    <p class="eyebrow orange">REGISTROS GUARDADOS</p>
+                    <h2 id="history-title">Tus cotizaciones</h2>
+                </div>
+                <span class="history-count">{{ historial_cotizaciones|length }} registro{{ historial_cotizaciones|length|pluralize }}</span>
+            </div>
+
+            {% if historial_cotizaciones %}
+                <div class="history-table-wrap">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Fecha</th>
+                                <th>Cliente</th>
+                                <th>Ruta</th>
+                                <th>Contenedor</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for cotizacion in historial_cotizaciones %}
+                                <tr>
+                                    <td data-label="ID">
+                                        <strong class="history-id">#{{ cotizacion.id }}</strong>
+                                    </td>
+                                    <td data-label="Fecha">
+                                        {{ cotizacion.fecha|date:"d/m/Y H:i" }}
+                                    </td>
+                                    <td data-label="Cliente">
+                                        <strong>{{ cotizacion.nombre_cliente }}</strong>
+                                        <span class="history-secondary">{{ cotizacion.empresa }}</span>
+                                    </td>
+                                    <td data-label="Ruta">
+                                        <span class="history-route">
+                                            {{ cotizacion.id_ruta.puerto_origen }}<br>
+                                            <b>↓</b> {{ cotizacion.id_ruta.puerto_destino }}
+                                        </span>
+                                    </td>
+                                    <td data-label="Contenedor">
+                                        {{ cotizacion.cantidad_contenedores }} × {{ cotizacion.tipo_contenedor }}
+                                    </td>
+                                    <td data-label="Total">
+                                        <strong class="history-total">
+                                            ${{ cotizacion.monto_total|floatformat:0 }}
+                                        </strong>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="history-empty">
+                    <span class="quote-help-mark">+</span>
+                    <h3>Aún no tienes cotizaciones</h3>
+                    <p>Cuando generes una cotización, aparecerá aquí para que puedas consultarla.</p>
+                    <a class="dark-button quote-submit" href="{% url 'cotizador' %}">
+                        Crear cotización <span>↗</span>
+                    </a>
+                </div>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>
