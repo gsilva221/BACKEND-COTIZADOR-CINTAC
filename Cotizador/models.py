@@ -92,3 +92,32 @@ class ruta_logistica(models.Model):
 
     def __str__(self):
         return f"{self.puerto_origen} - {self.puerto_destino} ({self.dias_transito} días)"
+
+
+class tarifa_contenedor(models.Model):
+    #PROVEEDORES = (
+    #    ('Segucargo', 'Segucargo'),
+    #    ('Delpa Group', 'Delpa Group'),
+    #)
+    
+    CONTENEDORES = (
+        ('20 HQ', '20 HQ'),
+        ('40 HQ', '40 HQ'),
+    )
+    
+    PESOS_MAX = (
+        ('20 HQ', 20000),
+        ('40 HQ', 25000),
+    )
+
+    id = models.AutoField(primary_key=True)
+    id_ruta = models.ForeignKey(ruta_logistica, on_delete=models.CASCADE, null=False)
+    #embarcador = models.CharField(max_length=100, choices=PROVEEDORES, null=False)
+    tipo_contenedor = models.CharField(max_length=50, choices=CONTENEDORES, null=False)
+    peso_max = models.IntegerField(choices=PESOS_MAX, null=False)
+    costo_fijo = models.IntegerField(null=False)
+    moneda_original = models.CharField(max_length=10, default='USD', null=False)
+
+    def __str__(self):
+        return f"Tarifas: 20' - {self.contenedor_20}, 40' - {self.contenedor_40}, 40HC - {self.contenedor_40hc}"
+    
