@@ -62,3 +62,33 @@ class Login(models.Model):
         self.rol = self.ROL_FIJO
         super().save(*args, **kwargs)
 
+class ruta_logistica(models.Model):
+    PUERTOS_ORIGEN = (
+        ('Shanghai, China', 'Shanghai, China'),
+        ('Ningbo, China', 'Ningbo, China'),
+        ('Shenzhen, China', 'Shenzhen, China'),
+        ('Qingdao, China', 'Qingdao, China'),
+        ('Guangzhou, China', 'Guangzhou, China'),
+        ('Tianjin, China', 'Tianjin, China'),
+        ('Yokohama, Japon', 'Yokohama, Japon'),
+        ('Tokyo, Japon', 'Tokyo, Japon'),
+        ('Nagoya, Japon', 'Nagoya, Japon'),
+        ('Kobe, Japon', 'Kobe, Japon'),
+        ('Osaka, Japon', 'Osaka, Japon'),
+        ('Barcelona, España', 'Barcelona, España'),
+        ('Los Angeles, EE.UU', 'Los Angeles, EE.UU'),
+        ('Callao, Perú', 'Callao, Perú'),
+    )
+    
+    PUERTOS_DESTINO = (
+        ('Valparaíso, Chile', 'Valparaíso, Chile'),
+        ('San Antonio, Chile', 'San Antonio, Chile'),
+    )
+
+    id = models.AutoField(primary_key=True)
+    puerto_origen = models.CharField(max_length=100, choices=PUERTOS_ORIGEN, null=False,)
+    puerto_destino = models.CharField(max_length=100, choices=PUERTOS_DESTINO, null=False)
+    dias_transito = models.IntegerField(null=False)
+
+    def __str__(self):
+        return f"{self.puerto_origen} - {self.puerto_destino} ({self.dias_transito} días)"

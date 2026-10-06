@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 
-from .models import Login, validate_login_password
+from .models import Login, ruta_logistica, validate_login_password
 
 
 class LoginViewTests(TestCase):
@@ -51,3 +51,26 @@ class LoginViewTests(TestCase):
                     validate_login_password(password)
 
         validate_login_password('Valida123')
+
+
+class RutaLogisticaModelTests(TestCase):
+    def test_puerto_origen_exposes_only_allowed_countries(self):
+        self.assertEqual(
+            ruta_logistica._meta.get_field('puerto_origen').choices,
+            [
+                ('Shanghai, China', 'Shanghai, China'),
+                ('Ningbo, China', 'Ningbo, China'),
+                ('Shenzhen, China', 'Shenzhen, China'),
+                ('Qingdao, China', 'Qingdao, China'),
+                ('Guangzhou, China', 'Guangzhou, China'),
+                ('Tianjin, China', 'Tianjin, China'),
+                ('Yokohama, Japon', 'Yokohama, Japon'),
+                ('Tokyo, Japon', 'Tokyo, Japon'),
+                ('Nagoya, Japon', 'Nagoya, Japon'),
+                ('Kobe, Japon', 'Kobe, Japon'),
+                ('Osaka, Japon', 'Osaka, Japon'),
+                ('Barcelona, España', 'Barcelona, España'),
+                ('Los Angeles, EE.UU', 'Los Angeles, EE.UU'),
+                ('Callao, Perú', 'Callao, Perú'),
+            ],
+        )
